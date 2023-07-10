@@ -1,0 +1,97 @@
+<div class="container">
+    <div class="row mt-3">
+        <div class="card">
+            <div class="card-header text-center">
+                <h4>Arreglo sin campo "address" ordenado por nombre de forma ascendente</h4>
+            </div>
+            <div class="card-body">
+                <div class="row justify-content-center">
+                    <div *ngFor="let person of sortedPeople" class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ person.name }}</h5>
+                                <p class="card-text">Age: {{ person.age }}</p>
+                                <p class="card-text">Email: {{ person.email }}</p>
+                                <p class="card-text">Company: {{ person.company }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="card">
+            <div class="card-header text-center">
+                <h4>Personas con edad entre 20 y 30 años y su nombre empieza por H y L.</h4>
+            </div>
+            <div class="card-body">
+                <div class="row justify-content-center">
+                    <div *ngFor="let person of filteredPeople" class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ person.name }}</h5>
+                                <p class="card-text">Age: {{ person.age }}</p>
+                                <p class="card-text">Email: {{ person.email }}</p>
+                                <p class="card-text">Company: {{ person.company }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="card">
+            <div class="card-header text-center">
+                <h4>Personas a las que se les puede enviar emails</h4>
+            </div>
+            <div class="card-body">
+                <div class="row justify-content-center">
+                    <div *ngFor="let person of peopleWithEmails" class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ person.name }}</h5>
+                                <p class="card-text">Age: {{ person.age }}</p>
+                                <p class="card-text">Email: {{ person.email }}</p>
+                                <p class="card-text">Company: {{ person.company }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="card">
+            <div class="card-header text-center">
+                <h4>Emails no asociados a una persona</h4>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li>
+                        {{ emailsWithoutPerson }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="card">
+            <div class="card-header text-center">
+                <h4>Emails no asociados a una persona</h4>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li>
+                        {{ invalidEmails }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
