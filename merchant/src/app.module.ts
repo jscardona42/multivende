@@ -6,27 +6,12 @@ import { AuthenticationService } from './authentication/authentication.service';
 import { CatalogsService } from './catalogs/catalogs.service';
 import { CatalogsController } from './catalogs/catalogs.controller';
 import { AuthenticationController } from './authentication/authentication.controller';
-import { CatalogsModule } from './catalogs/catalogs.module';
-import { AuthenticationModule } from './authentication/authentication.module';
 import { OAuthStrategy } from './authentication/strategies/oauth.strategy';
+import { RabbitmqService } from './rabbitmq/rabbitmq.service';
 
 @Module({
-  imports: [
-    // ClientsModule.register([
-    //   {
-    //     name: 'CATALOGS_SERVICE',
-    //     transport: Transport.RMQ,
-    //     options: {
-    //       urls: ['amqp://admin:1234@localhost:5672'],
-    //       queue: 'catalogs_queue',
-    //       queueOptions: {
-    //         durable: false
-    //       },
-    //     },
-    //   },
-    // ]),
-  ],
+  imports: [],
   controllers: [AppController, AuthenticationController, CatalogsController],
-  providers: [AppService, OAuthStrategy, AuthenticationService, CatalogsService, PrismaService],
+  providers: [AppService, OAuthStrategy, AuthenticationService, CatalogsService, PrismaService, RabbitmqService],
 })
 export class AppModule { }
